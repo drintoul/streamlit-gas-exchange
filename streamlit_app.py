@@ -11,9 +11,9 @@ def main():
 	cdn = st.toggle('Canadian Dollars')
 
 	if cdn:
-		st.write(f"Today's Exchange rate is $CDN {exchange} = $US 1.00")
+		st.write(f"Today's Exchange rate is \$CDN {exchange} = \$US 1.00")
 	else:
-		st.write(f"Today's Exchange rate is $CDN 1.00 == $US {1/exchange:1.2f}")
+		st.write(f"Today's Exchange rate is \$CDN 1.00 == \$US {1/exchange:1.2f}")
 
 if __name__ == '__main__':
 	main()	
