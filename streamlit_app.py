@@ -31,7 +31,7 @@ def main():
 
 	convert = round(amount * price, 2)
 
-	st.write(f"{amount} {sUnits} at {price} {sUnits} would cost {convert} {tCurrency} dollars")
+	st.write(f"{amount} {sUnits} at {amount} {sUnits} would cost {convert} {tCurrency} dollars")
 
 if __name__ == '__main__':
 	main()	
