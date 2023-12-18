@@ -17,14 +17,14 @@ cdn = st.toggle("Start with Canadian Dollars")
 def main():
 
 	if cdn:
-		rate = usd2cdn
+		rate = cdn2usd
 		st.write(f"Today's Exchange rate is \$CDN {cdn2usd} = \$US 1.00")
 		amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		sCurrency, tCurrency = "Canadian", "American"
 		sUnits, tUnits = "Litre", "gallon"
 		price = st.number_input("Enter gas price in \$CDN", value=1.15)
 	else:
-		rate = cdn2usd
+		rate = usd2cdn
 		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {usd2cdn}")
 		amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		sCurrency, tCurrency = "American", "Canadian"
