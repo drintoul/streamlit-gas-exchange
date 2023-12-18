@@ -10,7 +10,7 @@ df = df[df['Currency'] == 'US dollar']
 
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
-
+st.write(df)
 col1, col2 = st.columns(2)
 df2 = df[1:]
 df2.columns = df.iloc[0]
