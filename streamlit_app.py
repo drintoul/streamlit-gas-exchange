@@ -33,7 +33,7 @@ def main():
 
 	cost =  price * amount / rate
 
-	st.write(f"{amount} {sUnits}s at \${price:.2f}/{sUnits} and an exchange rate of \${rate}/{sCurrency} would cost \${cost:.2f} {tCurrency} dollars")
+	st.info(f"{amount} {sUnits}s at \${price:.2f}/{sUnits} and an exchange rate of \${rate:.2f}/{sCurrency} would cost \${cost:.2f} {tCurrency} dollars")
 
 if __name__ == '__main__':
 	main()	
