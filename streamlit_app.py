@@ -21,19 +21,19 @@ def main():
 		st.write(f"Today's Exchange rate is \$CDN {cdn2usd} = \$US 1.00")
 		amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		sCurrency, tCurrency = "Canadian", "American"
-		sUnits, tUnits = "Litres", "gallons"
+		sUnits, tUnits = "Litre", "gallon"
 		price = st.number_input("Enter gas price in \$CDN", value=1.15)
 	else:
 		rate = usd2cdn
 		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {usd2cdn}")
 		amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		sCurrency, tCurrency = "American", "Canadian"
-		sUnits, tUnits = "gallons", "Litres"
+		sUnits, tUnits = "gallon", "Litre"
 		price = st.number_input("Enter gas price in \$US", value=3.0)
 
 	cost = round(amount * rate, 2)
 
-	st.write(f"{amount} {sUnits} at {rate} ${price}/{sUnits} would cost \${cost} {tCurrency} dollars")
+	st.write(f"{amount} {sUnits}s at {rate} ${price}/{sUnits} would cost \${cost} {tCurrency} dollars")
 
 if __name__ == '__main__':
 	main()	
