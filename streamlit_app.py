@@ -8,16 +8,16 @@ dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-ra
 df = dfs[0]
 df = df[df['Currency'] == 'US dollar']
 
+usd2cdn = df.iloc[-1, -1]
+cdn2usd = round(1 / usd2cdn, 4)
+
 col1, col2 = st.columns(2)
 df.columns = df.iloc[0]
 df = df[1:]
 col1.dataframe(df.head(), hide_index=True)
-df2 = df.T
-col2.dataframe(df2, hide_index=True)
-col2.line_chart(df2)
-	
-usd2cdn = df.iloc[-1, -1]
-cdn2usd = round(1 / usd2cdn, 4)
+#df2 = df.T
+col2.dataframe(df, hide_index=True)
+col2.line_chart(df)
 
 cdn = st.toggle("Start with Canadian Dollars")
 
