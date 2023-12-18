@@ -11,12 +11,13 @@ df = df[df['Currency'] == 'US dollar']
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
 st.write(df)
-st.write(df.T)
+dfT = df.T
+st.write(dfT)
+dfT.columns = dfT.iloc[0]
+dfT = dfT[1:]
+
 col1, col2 = st.columns(2)
-df2 = df[1:]
-df2.columns = df.iloc[0]
-st.write(df2)
-col1.dataframe(df2.head(), hide_index=True)
+col1.dataframe(dfT.head(), hide_index=True)
 #df2 = df.T
 #col2.line_chart(df2)
 
