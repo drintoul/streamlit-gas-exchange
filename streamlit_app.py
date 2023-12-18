@@ -11,15 +11,13 @@ def main():
 
 	st.write(c2u, u2c)
 	
-	cdn = st.toggle('Canadian Dollars')
-
-	
 	if cdn:
 		st.write(f"Today's Exchange rate is \$CDN {c2u} = \$US 1.00")
+		price = st.number_input("Enter today's gas price in \$CDN")
 	else:
 		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {u2c}")
+		price = st.number_input("Enter today's gas price in \$US")
 
-	price = st.number_input("Enter today's gas price")
 	st.write(price)
 
 if __name__ == '__main__':
