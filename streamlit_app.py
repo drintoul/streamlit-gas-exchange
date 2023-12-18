@@ -8,7 +8,7 @@ def main():
   st.write(dfs)
   st.dataframe(df)
 
-  st.toggle('Enter value', ['On', 'Off'])
+  #st.toggle('Enter value', ['On', 'Off'])
 
 if __name__ == '__main__':
 	main()	
