@@ -5,6 +5,10 @@ def main():
 
 	st.header('Canada/US Gas Price Comparison')
 	st.subheader('Compare gas prices including currency exchange')
+
+	dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
+	df = dfs[0]
+	st.dataframe(df.head())
 	
 	c2u = 1.37
 	u2c = round(1/c2u, 2)
