@@ -6,14 +6,21 @@ def main():
 	st.header('Canada/US Gas Price Comparison')
 	st.subheader('Compare gas prices including currency exchange')
 	
-	exchange = 1.37
+	c2u = 1.37
+	u2c = round(1/c2u, 2)
 
+	st.write(c2u, u2c)
+	
 	cdn = st.toggle('Canadian Dollars')
 
+	
 	if cdn:
-		st.write(f"Today's Exchange rate is \$CDN {exchange} = \$US 1.00")
+		st.write(f"Today's Exchange rate is \$CDN {c2u} = \$US 1.00")
 	else:
-		st.write(f"Today's Exchange rate is \$CDN 1.00 == \$US {1/exchange:1.2f}")
+		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {u2c}")
+
+	price = st.number_input('Enter today's gas price')
+ 	st.write(price)
 
 if __name__ == '__main__':
 	main()	
