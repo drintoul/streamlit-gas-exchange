@@ -33,7 +33,7 @@ def main():
 
 	cost = round(amount * rate, 2)
 
-	st.write(f"{amount} {sUnits} at {rate} {sUnits} would cost \${cost} {tCurrency} dollars")
+	st.write(f"{amount} {sUnits} at {rate} ${price}/{sUnits} would cost \${cost} {tCurrency} dollars")
 
 if __name__ == '__main__':
 	main()	
