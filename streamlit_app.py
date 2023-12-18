@@ -10,7 +10,7 @@ df = df[df['Currency'] == 'US dollar']
 
 col1, col2 = st.columns(2)
 col1.dataframe(df.head(), hide_index=True)
-df.columns = df[0]
+df.columns = df.iloc[0]
 df = df[1:]
 df2 = df.T
 col2.dataframe(df2, hide_index=True)
