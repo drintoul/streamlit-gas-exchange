@@ -20,7 +20,7 @@ def main():
 		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {u2c}")
 
 	price = st.number_input("Enter today's gas price")
- 	st.write(price)
+	st.write(price)
 
 if __name__ == '__main__':
 	main()	
