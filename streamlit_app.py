@@ -10,7 +10,8 @@ df = df[df['Currency'] == 'US dollar']
 
 col1, col2 = st.columns(2)
 col1.dataframe(df.head(), hide_index=True)
-col2.line_chart(df)
+df2 = df.T
+col2.line_chart(df2)
 	
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
