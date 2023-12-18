@@ -9,6 +9,8 @@ def main():
 	dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
 	df = dfs[0]
 	st.dataframe(df.head())
+	usd = df.iloc[-1, -1]
+	st.write(usd)
 	
 	c2u = 1.37
 	u2c = round(1/c2u, 2)
