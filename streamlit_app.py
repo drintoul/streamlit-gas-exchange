@@ -12,7 +12,7 @@ def main():
 	st.dataframe(df.head(), hide_index=True)
 	
 	usd = df.iloc[-1, -1]
-	can = round(1/c2u, 2)
+	can = round(1/usd, 2)
 
 	cdn = st.toggle("Canadian Dollars")
 
