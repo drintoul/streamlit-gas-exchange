@@ -10,9 +10,9 @@ df = df[df['Currency'] == 'US dollar']
 
 col1, col2 = st.columns(2)
 col1.dataframe(df.head(), hide_index=True)
+df.columns = df[0]
+df = df[1:]
 df2 = df.T
-df2.columns = df[0,:]
-df2 = df2[1:]
 col2.dataframe(df2, hide_index=True)
 col2.line_chart(df2)
 	
