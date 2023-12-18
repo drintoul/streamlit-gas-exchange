@@ -12,7 +12,7 @@ def main():
 	st.dataframe(df.head(), hide_index=True)
 	
 	usd2can = df.iloc[-1, -1]
-	can2usd = round(1/usd2can, 2)
+	can2usd = round(1/usd2can, 4)
 
 	cdn = st.toggle("Start with Canadian Dollars")
 	
@@ -31,7 +31,7 @@ def main():
 
 	convert = round(amount * price, 2)
 
-	st.write(f"{amount} {sUnits} at {price} {sUnits} would cost {convert} {tCurrency} dollars")
+	st.write(f"{amount} {sCurrency} at {price} {sUnits} would cost {convert} {tCurrency} dollars")
 
 if __name__ == '__main__':
 	main()	
