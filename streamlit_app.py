@@ -10,6 +10,8 @@ def main():
 	u2c = round(1/c2u, 2)
 
 	st.write(c2u, u2c)
+
+	cdn = st.toggle("Canadian Dollars")
 	
 	if cdn:
 		st.write(f"Today's Exchange rate is \$CDN {c2u} = \$US 1.00")
