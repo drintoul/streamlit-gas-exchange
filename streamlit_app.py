@@ -15,7 +15,7 @@ dfT = df.T
 dfT.columns = dfT.iloc[0]
 
 col1, col2 = st.columns(2)
-col1.dataframe(df.head())
+col1.dataframe(dfT[1:6])
 #df2 = df.T
 col2.line_chart(dfT)
 
