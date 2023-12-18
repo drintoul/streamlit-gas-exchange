@@ -29,9 +29,9 @@ def main():
 		sUnits, tUnits = "gallons", "Litres"
 		price = st.number_input("Enter gas price in \$US")
 
-	convert = amount * price
+	convert = round(amount * price, 2)
 
-	st.write(f"{amount} {sUnits} at {price} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
+	st.write(f"{amount} {sUnits} at {price} {sUnits} would cost {convert} {tCurrency} dollars")
 
 if __name__ == '__main__':
 	main()	
