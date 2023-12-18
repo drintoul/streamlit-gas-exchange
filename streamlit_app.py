@@ -8,7 +8,7 @@ dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-ra
 df = dfs[0]
 df = df[df['Currency'] == 'US dollar']
 
-col1, col2 = st.cols(2)
+col1, col2 = st.columns(2)
 col1.dataframe(df.head(), hide_index=True)
 col2.line_chart(df)
 	
