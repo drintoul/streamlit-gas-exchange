@@ -11,27 +11,27 @@ def main():
 	df = df[df['Currency'] == 'US dollar']
 	st.dataframe(df.head(), hide_index=True)
 	
-	usd = df.iloc[-1, -1]
-	can = round(1/usd, 2)
+	usd2can = df.iloc[-1, -1]
+	can2usd = round(1/usd2can, 2)
 
-	cdn = st.toggle("Canadian Dollars")
+	cdn = st.toggle("Start with Canadian Dollars")
 	
 	if cdn:
 		amount = st.number_input("Enter Amount of gas in Litres")
 		sCurrency, tCurrency = "Canadian", "American"
 		sUnits, tUnits = "Litres", "gallons"
-		st.write(f"Today's Exchange rate is \$CDN {c2u} = \$US 1.00")
+		st.write(f"Today's Exchange rate is \$CDN {can2usd} = \$US 1.00")
 		price = st.number_input("Enter gas price in \$CDN")
 	else:
 		amount = st.number_input("Enter Amount of gas in gallons")
 		sCurrency, tCurrency = "American", "Canadian"
 		sUnits, tUnits = "gallons", "Litres"
-		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {u2c}")
+		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {usd2can}")
 		price = st.number_input("Enter gas price in \$US")
 
 	convert = amount * price
 
-	st.write(f"{amount} {sUnits} at {can} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
+	#st.write(f"{amount} {sUnits} at {can} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
 
 if __name__ == '__main__':
 	main()	
