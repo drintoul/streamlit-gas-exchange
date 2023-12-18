@@ -11,8 +11,8 @@ def main():
 	df = df[df['Currency'] == 'US dollar']
 	st.dataframe(df.head(), hide_index=True)
 	
-	usd2can = df.iloc[-1, -1]
-	can2usd = round(1/usd2can, 4)
+	usd2cdn = df.iloc[-1, -1]
+	cdn2usd = round(1 / usd2cdn, 4)
 
 	cdn = st.toggle("Start with Canadian Dollars")
 	
