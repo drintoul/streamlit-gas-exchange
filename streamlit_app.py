@@ -10,11 +10,9 @@ def main():
 	df = dfs[0]
 	df = df[df['Currency'] == 'US dollar']
 	st.dataframe(df.head(), hide_index=True)
-	usd = df.iloc[-1, -1]
-	st.write(usd)
 	
-	c2u = 1.37
-	u2c = round(1/c2u, 2)
+	usd = df.iloc[-1, -1]
+	can = round(1/c2u, 2)
 
 	cdn = st.toggle("Canadian Dollars")
 
@@ -33,7 +31,7 @@ def main():
 
 	convert = amount * price
 
-	st.write(f"{amount} {sUnits} at {c2u} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
+	st.write(f"{amount} {sUnits} at {can} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
 
 if __name__ == '__main__':
 	main()	
