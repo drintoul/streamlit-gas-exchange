@@ -8,7 +8,8 @@ def main():
 
 	dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
 	df = dfs[0]
-	st.dataframe(df.head())
+	df = df[df['Currency'] == 'US Dollar']
+	st.dataframe(df.head(), hide_index=True)
 	usd = df.iloc[-1, -1]
 	st.write(usd)
 	
