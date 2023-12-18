@@ -7,7 +7,10 @@ st.subheader('Compare gas prices including currency exchange')
 dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
 df = dfs[0]
 df = df[df['Currency'] == 'US dollar']
-st.dataframe(df.head(), hide_index=True)
+
+col1, col2 = st.cols(2)
+col1.dataframe(df.head(), hide_index=True)
+col2.line_chart(df)
 	
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
