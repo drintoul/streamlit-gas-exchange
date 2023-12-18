@@ -18,20 +18,20 @@ def main():
 	
 	if cdn:
 		st.write(f"Today's Exchange rate is \$CDN {can2usd} = \$US 1.00")
-		amount = st.number_input("Enter Amount of gas in Litres")
+		amount = st.number_input("Enter Amount of gas in Litres", value=11)
 		sCurrency, tCurrency = "Canadian", "American"
 		sUnits, tUnits = "Litres", "gallons"
 		price = st.number_input("Enter gas price in \$CDN")
 	else:
 		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {usd2can}")
-		amount = st.number_input("Enter Amount of gas in gallons")
+		amount = st.number_input("Enter Amount of gas in gallons", value=3)
 		sCurrency, tCurrency = "American", "Canadian"
 		sUnits, tUnits = "gallons", "Litres"
 		price = st.number_input("Enter gas price in \$US")
 
 	convert = amount * price
 
-	st.write(f"{amount} {sUnits} at {can} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
+	st.write(f"{amount} {sUnits} at {price} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
 
 if __name__ == '__main__':
 	main()	
