@@ -15,12 +15,12 @@ def main():
 	
 	if cdn:
 		sCurrency, tCurrency = "Canadian", "American"
-		sUnits, tUnits = "\$/Litre", "\$/gallon"
+		sUnits, tUnits = "Litres", "gallons"
 		st.write(f"Today's Exchange rate is \$CDN {c2u} = \$US 1.00")
 		price = st.number_input("Enter gas price in \$CDN")
 	else:
 		sCurrency, tCurrency = "American", "Canadian"
-		sUnits, tUnits = "\$/gallon", "\$/Litre"
+		sUnits, tUnits = "gallons", "Litres"
 		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {u2c}")
 		price = st.number_input("Enter gas price in \$US")
 
