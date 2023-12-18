@@ -31,7 +31,7 @@ def main():
 
 	convert = amount * price
 
-	#st.write(f"{amount} {sUnits} at {can} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
+	st.write(f"{amount} {sUnits} at {can} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
 
 if __name__ == '__main__':
 	main()	
