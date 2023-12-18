@@ -1,18 +1,20 @@
 import streamlit as st
 import pandas as pd
 
+dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
+df = dfs[0]
+df = df[df['Currency'] == 'US dollar']
+st.dataframe(df.head(), hide_index=True)
+	
+usd2cdn = df.iloc[-1, -1]
+cdn2usd = round(1 / usd2cdn, 4)
+
 def main():
 
 	st.header('Canada/US Gas Price Comparison')
 	st.subheader('Compare gas prices including currency exchange')
 
-	dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
-	df = dfs[0]
-	df = df[df['Currency'] == 'US dollar']
-	st.dataframe(df.head(), hide_index=True)
-	
-	usd2cdn = df.iloc[-1, -1]
-	cdn2usd = round(1 / usd2cdn, 4)
+
 
 	cdn = st.toggle("Start with Canadian Dollars")
 	
