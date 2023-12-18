@@ -9,8 +9,6 @@ def main():
 	c2u = 1.37
 	u2c = round(1/c2u, 2)
 
-	st.write(c2u, u2c)
-
 	cdn = st.toggle("Canadian Dollars")
 
 	amount = st.number_input("Enter Amount")
@@ -25,6 +23,8 @@ def main():
 		sUnits, tUnits = "\$/gallon", "\$/Litre"
 		st.write(f"Today's Exchange rate is \$CDN 1.00 = \$US {u2c}")
 		price = st.number_input("Enter gas price in \$US")
+
+	convert = amount * price
 
 	st.write(f"{amount} {sUnits} at {c2u} {sCurrency} dollars would cost {convert} {tUnits} {tCurrency}")
 
