@@ -14,6 +14,7 @@ cdn2usd = round(1 / usd2cdn, 4)
 col1, col2 = st.columns(2)
 df.columns = df.iloc[0]
 df = df[1:]
+st.write(df)
 col1.dataframe(df.head(), hide_index=True)
 #df2 = df.T
 col2.dataframe(df, hide_index=True)
