@@ -10,16 +10,14 @@ df = df[df['Currency'] == 'US dollar']
 
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
-st.write(df)
+
 dfT = df.T
-st.write(dfT)
 dfT.columns = dfT.iloc[0]
-dfT = dfT[1:]
 
 col1, col2 = st.columns(2)
-col1.dataframe(dfT.head(), hide_index=True)
+col1.dataframe(dfT.head())
 #df2 = df.T
-#col2.line_chart(df2)
+col2.line_chart(dfT)
 
 cdn = st.toggle("Start with Canadian Dollars")
 
