@@ -5,5 +5,5 @@ def main():
 
   st.write('hello')
 
-if __name__ == 'main':
-  main()
+if __name__ == '__main__':
+	main()	
