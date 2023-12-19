@@ -23,7 +23,11 @@ https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates""")
 
 st.dataframe(df, hide_index=True)
 
+st.divider()
+
 cdn = st.toggle("Start with Canadian Dollars", value=True)
+
+st.divider()
 
 def main():
 
