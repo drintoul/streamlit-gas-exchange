@@ -30,20 +30,20 @@ def main():
 		rate = cdn2usd
 		st.write(f"Current Exchange Rate is \$CDN {rate} = \$USD 1.00")
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
-		amount = st.slider("Enter Amount of gas in Litres", value=5.0)
+		amount = st.slider("Enter Amount of gas in Litres", 1.0, 10.0, 5.0)
 		sCurrency, tCurrency = "Canadian", "American"
 		sUnits, tUnits = "Litre", "gallon"
 		#price = st.number_input("Enter gas price in \$CDN", value=1.15)
-		price = st.slider("Enter gas price in \$CDN", value=1.15)
+		price = st.slider("Enter gas price in \$CDN", 0.8, 2.0, 1.15)
 	else:
 		rate = usd2cdn
 		st.write(f"Current Exchange Rate is \$CDN 1.00 = \$USD {rate}")
 		#amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
-		amount = st.slider("Enter Amount of gas in gallons", value=5.0)
+		amount = st.slider("Enter Amount of gas in gallons", 1.0, 10.0, 5.0)
 		sCurrency, tCurrency = "American", "Canadian"
 		sUnits, tUnits = "gallon", "Litre"
 		#price = st.number_input("Enter gas price in \$US", value=3.0)
-		price = st.slider("Enter gas price in \$CDN", value=1.15)
+		price = st.slider("Enter gas price in \$US", 2.0, 5.0, 3.0)
 		
 	cost =  price * amount * rate
 
