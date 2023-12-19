@@ -33,7 +33,7 @@ def main():
 		rate = cdn2usd
 		st.write(f"Current Exchange Rate is \$CDN {rate} = \$USD 1.00")
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
-		amount = st.slider("Enter Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format=".1f")
+		amount = st.slider("Enter Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format="%f")
 		sCurrency, tCurrency = "Canadian", "American"
 		sUnits, tUnits = "Litre", "gallon"
 		#price = st.number_input("Enter gas price in \$CDN", value=1.15)
