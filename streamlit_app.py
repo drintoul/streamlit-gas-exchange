@@ -11,7 +11,7 @@ df = df[df['Currency'] == 'US dollar']
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
 
-st.dataframe(df)
+st.dataframe(df, hide_index=True)
 
 #dfT = df.T
 #dfT.columns = dfT.iloc[0]
