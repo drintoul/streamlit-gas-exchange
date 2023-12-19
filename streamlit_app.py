@@ -22,7 +22,7 @@ cdn2usd = round(1 / usd2cdn, 4)
 st.write("""Exchange Rate from Bank of Canada:
 https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates""")
 
-st.dataframe(df, hide_index=True)
+#st.dataframe(df, hide_index=True)
 
 st.divider()
 
