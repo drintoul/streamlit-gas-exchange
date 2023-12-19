@@ -16,6 +16,8 @@ def fetch_exchange_rate():
 
 df, asof = fetch_exchange_rate()
 
+cdn = st.toggle("Start with Canadian Dollars", value=True)
+
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
 
@@ -25,8 +27,6 @@ https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates""")
 #st.dataframe(df, hide_index=True)
 
 #st.divider()
-
-cdn = st.toggle("Start with Canadian Dollars", value=True)
 
 def main():
 
