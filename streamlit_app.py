@@ -5,8 +5,7 @@ st.set_page_config(page_title="Canada/US Gas Price Comparison")
 st.title('Canada/US Gas Price Comparison')
 st.subheader('Calculate gas prices including currency exchange')
 
-#@st.cache_data(ttl=86400)
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=86400)
 def fetch_exchange_rate():
 
 	dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
