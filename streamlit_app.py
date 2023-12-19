@@ -24,7 +24,7 @@ st.dataframe(df, hide_index=True)
 #)
 #col2.altair_chart(c, use_container_width=True)
 
-cdn = st.toggle("Start with Canadian Dollars")
+cdn = st.toggle("Start with Canadian Dollars", value=True)
 
 def main():
 
