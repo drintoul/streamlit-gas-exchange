@@ -5,9 +5,15 @@ st.set_page_config(page_title="Canada/US Gas Price Comparison")
 st.title('Canada/US Gas Price Comparison')
 st.subheader('Calculate gas prices including currency exchange')
 
-dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
-df = dfs[0]
-df = df[df['Currency'] == 'US dollar']
+@st.cache_data(ttl=86400)
+def fetch_exchange_rate():
+
+	dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
+	df = dfs[0]
+	df = df[df['Currency'] == 'US dollar']
+	return df
+
+df = fetch_exchange_rate()
 
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
