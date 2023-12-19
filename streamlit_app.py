@@ -18,8 +18,8 @@ df = fetch_exchange_rate()
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
 
-st.write("Data from Bank of Canada
-https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
+st.write("""Data from Bank of Canada
+https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates""")
 
 st.dataframe(df, hide_index=True)
 
