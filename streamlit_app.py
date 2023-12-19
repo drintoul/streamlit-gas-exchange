@@ -37,7 +37,7 @@ def main():
 		sUnits, tUnits = "gallon", "Litre"
 		price = st.number_input("Enter gas price in \$US", value=3.0)
 
-	cost =  price * amount / rate
+	cost =  price * amount * rate
 
 	st.info(f"{amount} {sUnits}s at \${price:.2f}/{sUnits} with exchange rate of \${rate:.2f} would cost \${cost:.2f} {tCurrency}")
 
