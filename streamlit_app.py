@@ -37,7 +37,7 @@ def main():
 		sCurrency, tCurrency = "Canadian", "American"
 		sUnits, tUnits = "Litre", "gallon"
 		#price = st.number_input("Enter gas price in \$CDN", value=1.15)
-		price = st.slider("Enter gas price in \$CDN", 0.8, 2.0, 1.15)
+		price = st.slider("Enter gas price in \$CDN", 0.7, 2.0, 1.15)
 	else:
 		rate = usd2cdn
 		st.write(f"Current Exchange Rate is \$CDN 1.00 = \$USD {rate}")
