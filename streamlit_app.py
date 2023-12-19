@@ -39,7 +39,7 @@ cdn = st.toggle("Start with Canadian Dollars", value=True)
 def main():
 
 	if cdn:
-		rate = cdn2usd
+		rate = cdn2usd * 3.78541
 		st.write(f"Current Exchange Rate is \$CDN {rate} = \$USD 1.00")
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		amount = st.slider("Enter Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format="%f")
@@ -48,7 +48,7 @@ def main():
 		#price = st.number_input("Enter gas price in \$CDN", value=1.15)
 		price = st.slider("Enter gas price in \$CDN", 0.7, 2.0, 1.15, step=0.01, format="%f")
 	else:
-		rate = usd2cdn
+		rate = usd2cdn / 3.78541
 		st.write(f"Current Exchange Rate is \$CDN 1.00 = \$USD {rate}")
 		#amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		amount = st.slider("Enter Amount of gas in gallons", 1.0, 15.0, 10.0, step=0.1, format="%f")
