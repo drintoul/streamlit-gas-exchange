@@ -3,7 +3,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Canada/US Gas Price Comparison")
 st.title('Canada/US Gas Price Comparison')
-st.subheader('Compare gas prices including currency exchange')
+st.subheader('Calculate gas prices including currency exchange')
 
 dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
 df = dfs[0]
