@@ -16,7 +16,7 @@ dfT.columns = dfT.iloc[0]
 
 col1, col2 = st.columns(2)
 col1.dataframe(dfT[1:6])
-col2.altair_chart(dfT[1:6])
+#col2.altair_chart(dfT[1:6])
 
 cdn = st.toggle("Start with Canadian Dollars")
 
