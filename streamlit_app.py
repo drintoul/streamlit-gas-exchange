@@ -27,13 +27,12 @@ st.divider()
 
 cdn = st.toggle("Start with Canadian Dollars", value=True)
 
-st.divider()
-
 def main():
 
 	if cdn:
 		rate = cdn2usd 
 		st.write(f"Current Exchange Rate is \$CDN {rate} = \$USD 1.00")
+		st.divider()
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		amount = st.slider("Enter Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format="%f")
 		convert = amount / 3.78541
@@ -44,6 +43,7 @@ def main():
 	else:
 		rate = usd2cdn # / 3.78541
 		st.write(f"Current Exchange Rate is \$CDN 1.00 = \$USD {rate}")
+		st.divider()
 		#amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		amount = st.slider("Enter Amount of gas in gallons", 1.0, 15.0, 10.0, step=0.1, format="%f")
 		convert = amount * 3.78541
