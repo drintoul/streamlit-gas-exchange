@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title="anada/US Gas Price Comparison)
+st.set_page_config(page_title="Canada/US Gas Price Comparison")
 st.title('Canada/US Gas Price Comparison')
 st.subheader('Compare gas prices including currency exchange')
 
