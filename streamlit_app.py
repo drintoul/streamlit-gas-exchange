@@ -39,19 +39,21 @@ cdn = st.toggle("Start with Canadian Dollars", value=True)
 def main():
 
 	if cdn:
-		rate = cdn2usd * 3.78541
+		rate = cdn2usd 
 		st.write(f"Current Exchange Rate is \$CDN {rate} = \$USD 1.00")
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		amount = st.slider("Enter Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format="%f")
+		convert = amount / 3.78541
 		sCurrency, tCurrency = "Canadian", "American"
 		sUnits, tUnits = "Litre", "gallon"
 		#price = st.number_input("Enter gas price in \$CDN", value=1.15)
 		price = st.slider("Enter gas price in \$CDN", 0.7, 2.0, 1.15, step=0.01, format="%f")
 	else:
-		rate = usd2cdn / 3.78541
+		rate = usd2cdn # / 3.78541
 		st.write(f"Current Exchange Rate is \$CDN 1.00 = \$USD {rate}")
 		#amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		amount = st.slider("Enter Amount of gas in gallons", 1.0, 15.0, 10.0, step=0.1, format="%f")
+		convert = amount * 3.78541
 		sCurrency, tCurrency = "American", "Canadian"
 		sUnits, tUnits = "gallon", "Litre"
 		#price = st.number_input("Enter gas price in \$US", value=3.0)
@@ -59,7 +61,7 @@ def main():
 		
 	cost =  price * amount * rate
 
-	st.info(f"{amount} {sUnits}s at \${price:.2f}/{sUnits} {sCurrency} with an exchange rate of \${rate:.2f} would cost \${cost:.2f} {tCurrency}", icon="💰")
+	st.info(f"{amount} {sUnits}s ({convert} {dUnits}s) at \${price:.2f}/{sUnits} {sCurrency} with an exchange rate of \${rate:.2f} would cost \${cost:.2f} {tCurrency}", icon="💰")
 
 if __name__ == '__main__':
 	main()	
