@@ -11,9 +11,10 @@ def fetch_exchange_rate():
 	dfs = pd.read_html("https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates")
 	df = dfs[0]
 	df = df[df['Currency'] == 'US dollar']
-	return df
+	asof = df.columns[-1]
+	return df, asof
 
-df = fetch_exchange_rate()
+df, asof = fetch_exchange_rate()
 
 usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
@@ -31,7 +32,7 @@ def main():
 
 	if cdn:
 		rate = cdn2usd 
-		st.write(f"Current Exchange Rate is \$CDN {rate} = \$USD 1.00")
+		st.write(f"Exchange Rate as of {asof} is \$CDN {rate} = \$USD 1.00")
 		st.divider()
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		amount = st.slider("Enter Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format="%f")
@@ -42,7 +43,7 @@ def main():
 		price = st.slider("Enter gas price in \$CDN", 0.7, 2.0, 1.15, step=0.01, format="%f")
 	else:
 		rate = usd2cdn # / 3.78541
-		st.write(f"Current Exchange Rate is \$CDN 1.00 = \$USD {rate}")
+		st.write(f"Exchange Rate as of {asof} is \$CDN 1.00 = \$USD {rate}")
 		st.divider()
 		#amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		amount = st.slider("Enter Amount of gas in gallons", 1.0, 15.0, 10.0, step=0.1, format="%f")
