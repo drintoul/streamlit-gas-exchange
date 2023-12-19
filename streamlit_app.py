@@ -12,7 +12,7 @@ usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
 
 dfT = df.T
-st.dataframe(dfT[1:6])
+st.dataframe(df[1:6])
 
 #dfT.columns = dfT.iloc[0]
 
