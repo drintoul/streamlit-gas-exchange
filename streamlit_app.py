@@ -23,17 +23,6 @@ https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates""")
 
 st.dataframe(df, hide_index=True)
 
-#dfT = df.T
-#dfT.columns = dfT.iloc[0]
-
-#col1, col2 = st.columns(2)
-
-#col1.dataframe(dfT[1:6])
-#c = (alt.chart(dfT[1:6])
-#     .mark_circle()
-#)
-#col2.altair_chart(c, use_container_width=True)
-
 cdn = st.toggle("Start with Canadian Dollars", value=True)
 
 def main():
@@ -61,7 +50,7 @@ def main():
 		
 	cost =  price * amount * rate
 
-	st.info(f"{amount} {sUnits}s ({convert} {dUnits}s) at \${price:.2f}/{sUnits} {sCurrency} with an exchange rate of \${rate:.2f} would cost \${cost:.2f} {tCurrency}", icon="💰")
+	st.info(f"{amount} {sUnits}s \({convert} {dUnits}s\) at \${price:.2f}/{sUnits} {sCurrency} with an exchange rate of \${rate:.2f} would cost \${cost:.2f} {tCurrency}", icon="💰")
 
 if __name__ == '__main__':
 	main()	
