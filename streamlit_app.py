@@ -15,13 +15,12 @@ dfT = df.T
 dfT.columns = dfT.iloc[0]
 
 col1, col2 = st.columns(2)
-"""
-col1.dataframe(dfT[1:6])
-c = (alt.chart(dfT[1:6])
-     .mark_circle()
-)
-col2.altair_chart(c, use_container_width=True)
-"""
+
+#col1.dataframe(dfT[1:6])
+#c = (alt.chart(dfT[1:6])
+#     .mark_circle()
+#)
+#col2.altair_chart(c, use_container_width=True)
 
 cdn = st.toggle("Start with Canadian Dollars")
 
