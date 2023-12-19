@@ -46,7 +46,7 @@ def main():
 		sCurrency, tCurrency = "American", "Canadian"
 		sUnits, tUnits = "gallon", "Litre"
 		#price = st.number_input("Enter gas price in \$US", value=3.0)
-		price = st.slider("Enter gas price in \$US", 2.0, 5.0, 3.0)
+		price = st.slider("Enter gas price in \$USD", 2.0, 5.0, 3.0)
 		
 	cost =  price * amount * rate
 
