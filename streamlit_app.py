@@ -12,9 +12,11 @@ usd2cdn = df.iloc[-1, -1]
 cdn2usd = round(1 / usd2cdn, 4)
 
 dfT = df.T
-dfT.columns = dfT.iloc[0]
+st.dataframe(dfT[1:6])
 
-col1, col2 = st.columns(2)
+#dfT.columns = dfT.iloc[0]
+
+#col1, col2 = st.columns(2)
 
 #col1.dataframe(dfT[1:6])
 #c = (alt.chart(dfT[1:6])
