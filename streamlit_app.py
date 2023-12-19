@@ -55,7 +55,8 @@ def main():
 		
 	cost =  price * amount * rate
 
-	st.info(f"""{amount:.1f} {sUnits}s ({convert:.1f} {tUnits}s) at {sCurrency} \${price:.2f}/{sUnits} with an exchange rate of {sCurrency} \${rate:.2f} = {tCurrency} \$1.00 
+	st.info(f"""{amount:.1f} {sUnits}s ({convert:.1f} {tUnits}s) at {sCurrency} \${price:.2f}/{sUnits} 
+ 		with an exchange rate of \${rate:.2f} {sCurrency} = \$1.00 {tCurrency} 
  		would cost \${cost:.2f} {tCurrency} (\${cost/rate:.2f} {sCurrency})""", icon="💰")
 
 if __name__ == '__main__':
