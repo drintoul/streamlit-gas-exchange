@@ -26,12 +26,6 @@ def main():
 	st.write("""Exchange Rate from Bank of Canada:
 	https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates""")
 
-#st.dataframe(df, hide_index=True)
-
-#st.divider()
-
-#def main():
-
 	if cdn:
 		rate = cdn2usd 
 		st.write(f"As of {asof} is \$CDN 1.00 = \$USD {rate:.2f}")
