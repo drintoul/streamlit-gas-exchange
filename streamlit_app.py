@@ -28,7 +28,7 @@ def main():
 
 	if cdn:
 		rate = cdn2usd 
-		st.write(f"As of {asof} exchange rate is \$CDN 1.00 = \$USD {rate:.2f}")
+		st.write(f"As of {asof} exchange rate is \n\$CDN 1.00 = \$USD {rate:.2f}")
 		st.divider()
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		amount = st.slider("Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format="%f")
@@ -39,7 +39,7 @@ def main():
 		price = st.slider("Gas price in \$CDN", 0.7, 2.0, 1.15, step=0.01, format="%f")
 	else:
 		rate = usd2cdn # / 3.78541
-		st.write(f"As of {asof} exchange rate is \$CDN {rate:.2f} = \$USD 1.00")
+		st.write(f"As of {asof} exchange rate is \n\$CDN {rate:.2f} = \$USD 1.00")
 		st.divider()
 		#amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		amount = st.slider("Amount of gas in gallons", 1.0, 15.0, 10.0, step=0.1, format="%f")
