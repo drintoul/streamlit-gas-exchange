@@ -28,7 +28,7 @@ def main():
 
 	if cdn:
 		rate = cdn2usd 
-		st.write(f"As of {asof}: \$CDN 1.00 = \$USD {rate:.2f}")
+		st.write(f"As of {asof}: \$CDN 1.00 = \$USD {rate:.3f}")
 		st.divider()
 		#amount = st.number_input("Enter Amount of gas in Litres", value=5.0)
 		amount = st.slider("Amount of gas in Litres", 1.0, 40.0, 10.0, step=0.1, format="%f")
@@ -39,7 +39,7 @@ def main():
 		price = st.slider("Gas price in \$CDN", 0.7, 2.0, 1.15, step=0.01, format="%f")
 	else:
 		rate = usd2cdn # / 3.78541
-		st.write(f"As of {asof}: \$CDN {rate:.2f} = \$USD 1.00")
+		st.write(f"As of {asof}: \$CDN {rate:.3f} = \$USD 1.00")
 		st.divider()
 		#amount = st.number_input("Enter Amount of gas in gallons", value=5.0)
 		amount = st.slider("Amount of gas in gallons", 1.0, 15.0, 10.0, step=0.1, format="%f")
@@ -52,7 +52,7 @@ def main():
 	cost =  price * amount * rate
 
 	st.info(f"""{amount:.1f} {sUnits}s ({convert:.1f} {tUnits}s) at {sCurrency} \${price:.2f}/{sUnits} 
- 		with an exchange rate of \${rate:.2f} {tCurrency} = \$1.00 {sCurrency} 
+ 		with an exchange rate of \${rate:.3f} {tCurrency} = \$1.00 {sCurrency} 
  		would cost \${cost:.2f} {tCurrency} (\${cost/rate:.2f} {sCurrency})""", icon="💰")
 
 if __name__ == '__main__':
